@@ -1,0 +1,41 @@
+{% extends 'users/userbase.html'%}
+
+{%block contents%}
+{% load static %}
+ <!-- Header -->
+	<header id="head">
+	 
+	</header>
+	<!-- /Header -->
+
+	<!-- Intro -->
+	<div class="container text-center">
+		<br>
+		<!-- <h2>Implementation of Grey Scale Normalization in Machine Learning & Artificial Intelligence for Bioinformatics using Convolutional Neural Networks</h2> -->
+		<p class="text-muted">
+
+             <p><h3 align="center" style="color:orange;font-weight:bold;">Upload an Image to Server....</h3></p>
+      <center>
+           <h2 class="tm-text-title">Test Result <font color="RED"></font></h2>
+                                                <form action="{%url 'prediction'%}" method="post" enctype="multipart/form-data">
+                                                    {%csrf_token%}
+                                                 <div class="form-group">
+                                                        <input type="file" id="contact_subject" name="file" class="form-control" placeholder="Select an Image"  required/>
+                                                 </div>
+                                                  <div class="form-group">
+                                                      <button type="submit" id="contact_subject" name="Submit" class="btn-get-started scrollto" >Submit</button>
+                                                    </div>
+                                                </form>
+
+
+           
+           {% if u_name %} 
+ <img src="{% static 'output.png' %}" width="450" height="380">
+ {% endif %}
+      </center>
+		</p>
+	</div>
+	<!-- /Intro-->
+	</div>
+{%endblock%}
+

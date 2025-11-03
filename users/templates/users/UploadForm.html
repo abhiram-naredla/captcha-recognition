@@ -1,0 +1,43 @@
+{% extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+<!--<style>-->
+<!--    .bg-light{-->
+<!--    margin-top: -500px;-->
+<!--    background: #65cd00;-->
+<!--    padding:10px;-->
+<!--    }-->
+
+<!--</style>-->
+
+ <section class="we-do">
+    <div class="container">
+        <div class="we-do-details">
+            <div class="section-header text-center">
+                <h2>Test User Input</h2>
+                <p>
+                    <center>
+                <form  action="{%url 'predict'%}" enctype="multipart/form-data" method="POST" align="center">
+{%csrf_token%}
+ <table>
+<div class="form-group row">
+<div class="col-md-12">
+<strong>Select an Image</strong>  <input type="file" name="file"  accept="image/gif, image/jpeg, image/png" required placeholder="Select an Image to Upload"><br/>
+</div>
+</div>
+<div class="form-group row">
+
+</div>
+
+<button class="btn  btn-primary text-white py-3 px-5" type="submit"> Upload      </button>
+<h1>Results is <span style="color:RED">{{capt}}</span></h1>
+ <img src="{{path}}" width="450" height="380">
+</table>
+</form>
+            </center>
+                </p>
+            </div><!--/.section-header-->
+</section><!--/.we-do-->
+
+
+{%endblock%}
